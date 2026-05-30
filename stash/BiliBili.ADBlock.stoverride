@@ -20,13 +20,21 @@ http:
     - "app.bilibili.com"
     - "app.biliapi.net"
   script:
-    - match: ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)
+    - match: ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\?
+      name: 📺 BiliBili.ADBlock.request.json
+      type: request
+      require-body: false
+      argument:
+    - match: ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?)
       name: 📺 BiliBili.ADBlock.response.json
       type: response
       require-body: true
       argument:
 
 script-providers:
+  📺 BiliBili.ADBlock.request.json:
+    url: https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.24/request.bundle.js
+    interval: 86400
   📺 BiliBili.ADBlock.response.json:
     url: https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.24/response.bundle.js
     interval: 86400
