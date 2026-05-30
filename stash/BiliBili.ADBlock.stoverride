@@ -25,18 +25,8 @@ http:
       type: response
       require-body: true
       argument:
-    - match: ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo|RelatesFeed)$
-      name: 📺 BiliBili.ADBlock.response.grpc
-      type: response
-      require-body: true
-      binary-mode: true
-      max-size: 262144
-      argument:
 
 script-providers:
   📺 BiliBili.ADBlock.response.json:
-    url: https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.24/response.bundle.js
-    interval: 86400
-  📺 BiliBili.ADBlock.response.grpc:
     url: https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.24/response.bundle.js
     interval: 86400
