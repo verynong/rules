@@ -19,7 +19,6 @@ http:
   mitm:
     - "app.bilibili.com"
     - "app.biliapi.net"
-    - "grpc.biliapi.net"
   script:
     - match: ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)
       name: 📺 BiliBili.ADBlock.response.json
